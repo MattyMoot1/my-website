@@ -1,13 +1,4 @@
-# Astrodev: Template - Status Building
-
-A template for developers made in Astro. 🧑‍🚀
-
-![preview](/src/assets/astrodev-thumbnail.png)
-
-
-```sh
-git clone https://github.com/alamguardin/astrodev.git
-```
+# Matt Moots Blog Site
 
 ## 🧞 Commands
 
