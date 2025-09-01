@@ -1,0 +1,93 @@
+---
+import Pterodactyl from "../assets/Pterodactyl.png";
+import Nextcloud from "../assets/Nextcloud.png";
+import pihole from "../assets/pihole.png";
+---
+
+<section class="portfolio" id="portfolio">
+    <div class="portfolio-left-section">
+        <h2 class="portfolio-heading">
+            Take a look at my latest projects.
+        </h2>
+    </div>
+    <div class="portfolio-right-section">
+        <button class="portfolio-btn-left">
+            <i class="ri-arrow-left-s-line"></i>
+        </button>
+        <ul class="portfolio-cards">
+            <li class="card">
+                <figure class="card-picture">
+                    <img src={Pterodactyl.src} alt="Anything project" />
+                </figure>
+                <div class="card-content">
+                    <h3 class="card-heading"><a href="#">Pterodactyl app</a></h3>
+                    <p class="card-skills">Minecraft, Server Hosting, MySQL</p>
+                </div>
+            </li>
+            <li class="card">
+                <figure class="card-picture">
+                    <img src={Nextcloud.src} alt="Anything project" />
+                </figure>
+                <div class="card-content">
+                    <h3 class="card-heading"><a href="#">Nextcloud Site</a></h3>
+                    <p class="card-skills">NAS, Cloud Storage</p>
+                </div>
+            </li>
+            <li class="card">
+                <figure class="card-picture">
+                    <img src={pihole.src} alt="Anything project" />
+                </figure>
+                <div class="card-content">
+                    <h3 class="card-heading"><a href="#">Pi-Hole</a></h3>
+                    <p class="card-skills">DNS, ad-blocker, Network Monitoring</p>
+                </div>
+            </li>
+        </ul>
+        <button class="portfolio-btn-right">
+            <i class="ri-arrow-right-s-line"></i>
+        </button>
+    </div>
+</section>
+
+<script>
+    const cards = document.querySelectorAll(".card");
+    const leftArrow = document.querySelector(".portfolio-btn-left");
+    const rightArrow = document.querySelector(".portfolio-btn-right");
+    let currentIndex = 0;
+    let isAnimating = false;
+
+    function updateCarousel(newIndex) {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        currentIndex = (newIndex + cards.length) % cards.length;
+
+        cards.forEach((card, i) => {
+            const offset = (i - currentIndex + cards.length) % cards.length;
+
+            card.classList.remove("active", "hidden");
+
+            if (offset === 0) {
+                card.classList.add("active");
+            } else {
+                card.classList.add("hidden");
+            }
+        });
+
+        setTimeout(() => {
+            isAnimating = false;
+        }, 800);
+    }
+
+    console.log(rightArrow);
+
+    leftArrow.addEventListener("click", () => {
+        updateCarousel(currentIndex - 1);
+    });
+
+    rightArrow.addEventListener("click", () => {
+        updateCarousel(currentIndex + 1);
+    });
+
+    updateCarousel(0);
+</script>
