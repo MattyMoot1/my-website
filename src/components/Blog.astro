@@ -1,23 +1,43 @@
-<section class="contact" id="contact">
+--- 
+import "../styles/global.css";
+import Pterodactyl from '../assets/Pterodactyl-Guide.png';
+import Nextcloud from '../assets/Nextcloud-Guide.png';
+import pihole from '../assets/Pihole_logo.png';
+---
+
+
+<section class="contact col-span-2" id="contact">
     <h2 class="contact-heading">Latest Posts</h2>
+
     <p class="contact-body">
         Have a read of my latest blog posts below.
     </p>
-    <footer class="contact-footer">
-        <p class="contact-copy">© 2025 Matt Moot. All rights reserved.</p>
-        <ul class="contact-social">
-            <li class="contact-link">
-                <a href="github.com/MattyMoot1"><i class="ri-github-fill"></i></a>
-            </li>
-            <li class="contact-link">
-                <a href="https://www.linkedin.com/in/matthew-moot-714179166/"><i class="ri-linkedin-fill"></i></a>
-            </li>
-            <li>
-                <a href="https://www.instagram.com/matthewmooty9/"><i class="ri-instagram-fill"></i></a>
-            </li>
-            <li>
-                <a href="https://www.facebook.com/matthewmooty9/"><i class="ri-facebook-fill"></i></a>
-            </li>
-        </ul>
-    </footer>
+
+    <div class="flex flex-row gap-5 leading-normal">
+        <a href="#" class="flex items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src={Pterodactyl.src} alt="Image">
+            <div class="flex flex-col justify-between p-4 leading-normal">
+                <h5 class="mb-2 text-x1 font-bold tracking-tight text-gray-900 dark:text-white">Simple Installation Guide for Pterodactyl</h5>
+                <p class="mb-3 text-xs font-normal text-gray-700 dark:text-gray-400">An actual simple guide for noobs (like myself)</p>
+            </div>
+        </a>
+        <a href="#" class="flex  items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+            <img class="object-cover w-full rounded-t-lg h-fit md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src={Nextcloud.src} alt="Image">
+            <div class="flex flex-col justify-between p-4 leading-normal">
+                <h5 class="mb-2 text-x1 font-bold tracking-tight text-gray-900 dark:text-white">Take control over your data and host a Nextcloud server</h5>
+                <p class="mb-3 text-xs font-normal text-gray-700 dark:text-gray-400">An easy to understand guide on installing Nextcloud in your home server.</p>
+            </div>
+        </a>
+                <a href="#" class="flex  items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+            <img class="object-cover w-full rounded-t-lg h-fit md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src={pihole.src} alt="Image">
+            <div class="flex flex-col justify-between p-4 leading-normal">
+                <h5 class="mb-2 text-x1 font-bold tracking-tight text-gray-900 dark:text-white">PiHole, the adblocker that works ... sorta</h5>
+                <p class="mb-3 text-xs font-normal text-gray-700 dark:text-gray-400">Read how I use adblocker to monitor my network traffic.</p>
+            </div>
+        </a>
+    </div>
+
+
 </section>
+    
+
